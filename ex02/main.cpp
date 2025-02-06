@@ -6,7 +6,7 @@
 /*   By: lottavi <lottavi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:37:36 by lottavi           #+#    #+#             */
-/*   Updated: 2025/02/05 20:37:36 by lottavi          ###   ########.fr       */
+/*   Updated: 2025/02/06 14:30:01 by lottavi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int main() {
 	Cat copyCat = originalCat;
 	copyCat.getBrain()->setIdea(0, "Copied Cat Idea");
 
-	std::cout << "Original Dog's Idea 0: " << originalDog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy Dog's Idea 0: " << copyDog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Original Cat's Idea 0: " << originalCat.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy Cat's Idea 0: " << copyCat.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Original Dog's Idea chase the cat: " << originalDog.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Copy Dog's Idea chase the cat: " << copyDog.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Original Cat's Idea climb the tree: " << originalCat.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Copy Cat's Idea clib the tree: " << copyCat.getBrain()->getIdea(0) << std::endl;
 
 	return 0;
 }
