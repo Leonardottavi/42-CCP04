@@ -6,7 +6,7 @@
 /*   By: lottavi <lottavi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 19:59:04 by lottavi           #+#    #+#             */
-/*   Updated: 2025/02/05 19:59:04 by lottavi          ###   ########.fr       */
+/*   Updated: 2025/02/06 14:26:48 by lottavi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,33 @@
 #include "Cat.hpp"
 #include <iostream>
 
-int main() {
-	const Animal* meta = new Animal();
+int main()
+{
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound(); // Outputs cat sound
-	j->makeSound(); // Outputs dog sound
-	meta->makeSound(); // Outputs animal sound
-
-	delete meta;
 	delete j;
 	delete i;
 
-	Dog originalDog;
-	originalDog.getBrain()->setIdea(0, "Original Dog Idea");
-	Dog copyDog(originalDog);
-	copyDog.getBrain()->setIdea(0, "Copied Dog Idea");
+	// Additional tests
+	Dog* dog1 = new Dog();
+	Dog* dog2 = new Dog(*dog1);
+	dog1->makeSound();
+	dog2->makeSound();
+	dog1->getBrain()->setIdea(0, "Chase the cat");
+	std::cout << "Dog1's idea: " << dog1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Dog2's idea: " << dog2->getBrain()->getIdea(0) << std::endl;
+	delete dog1;
+	delete dog2;
 
-	Cat originalCat;
-	originalCat.getBrain()->setIdea(0, "Original Cat Idea");
-	Cat copyCat(originalCat);
-	copyCat.getBrain()->setIdea(0, "Copied Cat Idea");
-
-	std::cout << "Original Dog's Idea 0: " << originalDog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy Dog's Idea 0: " << copyDog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Original Cat's Idea 0: " << originalCat.getBrain()->getIdea(0) << std::endl;
-	std::cout << "Copy Cat's Idea 0: " << copyCat.getBrain()->getIdea(0) << std::endl;
+	Cat* cat1 = new Cat();
+	Cat* cat2 = new Cat(*cat1);
+	cat1->makeSound();
+	cat2->makeSound();
+	cat1->getBrain()->setIdea(0, "Climb the tree");
+	std::cout << "Cat1's idea: " << cat1->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cat2's idea: " << cat2->getBrain()->getIdea(0) << std::endl;
+	delete cat1;
+	delete cat2;
 
 	return 0;
 }
